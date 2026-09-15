@@ -1,11 +1,12 @@
 ---
-title: MindStore
+title: BrainClone
 permalink: /
 ---
 
-# MindStore
+# BrainClone
 
-A personal knowledge store for iPhone. Everything it does, it does on your phone.
+A personal knowledge store for iPhone and Mac. Everything it does, it does on your
+own devices, and your iPhone and Mac stay in step through your own private iCloud.
 
 - [Privacy Policy](privacy/)
 
