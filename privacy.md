@@ -27,9 +27,13 @@ iOS and macOS:
 | Feature | Runs on | Leaves the device |
 |---|---|---|
 | Dictation (speech to text) | Your iPhone or Mac | No |
-| Clean up (tidying a rambled note) | Your iPhone or Mac | No |
-| Search | Your iPhone or Mac | No |
+| Transcribing a recording you pick or share (such as a voice memo) | Your iPhone or Mac | No |
+| Clean up (tidying a rambled note, task or conversation) | Your iPhone or Mac | No |
+| Search, and "looks like something you wrote before" | Your iPhone or Mac | No |
 | Answers (a question answered from your notes) | Your iPhone or Mac | No |
+| Catch me up (what you last talked about with someone) | Your iPhone or Mac | No |
+| Suggested follow-ups (tasks read out of a conversation you logged) | Your iPhone or Mac | No |
+| Summaries (of a topic, or of the last few days in Looking Back) | Your iPhone or Mac | No |
 
 There is no call to OpenAI, Anthropic, Google, or any other AI service, paid or
 free. There is no API key in this app because there is nothing to authenticate to.
@@ -42,11 +46,18 @@ device in your hand. The excerpts are not uploaded, not logged, and not retained
 after the answer is written. The answer is shown with the entries it came from, so
 you can always see what it read.
 
-Clean up and answers require Apple Intelligence: an iPhone 15 Pro or newer, or a
-Mac with Apple silicon. Without it those two features are unavailable — capture,
+Catch me up, suggested follow-ups and summaries work the same way: the app picks
+the text, Apple's on-device model reads it, and nothing it read is kept afterwards.
+What the model writes is only ever a suggestion — a follow-up becomes a task, and a
+clean up replaces your text, only when you tap to accept it.
+
+Clean up, answers, catch me up, follow-ups and summaries require Apple
+Intelligence: an iPhone 15 Pro or newer, or a Mac with Apple silicon. Without it
+those features are unavailable — capture, dictation, transcribing recordings,
 search, sync and everything else work normally.
 
-The first time you dictate, iOS or macOS may download a speech model from Apple.
+The first time you dictate or transcribe a recording, iOS or macOS may download a
+speech model from Apple.
 That is a download **from** Apple, not an upload of anything of yours.
 
 ## iPhone and Mac, kept in step by your iCloud
@@ -81,12 +92,18 @@ never makes a network connection of its own.
 
 ## The one asterisk: Siri
 
-BrainClone can be driven by Siri and Shortcuts — "add a thought to BrainClone", and
-so on. When you do that, **Siri transcribes what you said, not BrainClone.** Your
+BrainClone can be driven by Siri and Shortcuts — "add a thought to BrainClone",
+"ask BrainClone", and so on. When you do that, **Siri transcribes what you said, not
+BrainClone.** Your
 words go through Apple's speech stack rather than the app's, which on Apple
 Intelligence hardware means on-device processing or Apple's Private Cloud Compute,
 under [Apple's Privacy Policy](https://www.apple.com/legal/privacy/) rather than
 this one.
+
+When you ask BrainClone a question through Siri, the answer is written on your
+device by the app, exactly as in Search, and Siri reads it aloud. Asking or
+searching through Siri needs your device unlocked, so nobody holding a locked phone
+can ask it what your notes say.
 
 What BrainClone then stores still never leaves your devices and your iCloud. But
 "transcription happens on this device" is a claim about the app, and it stops being
@@ -97,7 +114,8 @@ dictate inside the app rather than through Siri, and it never applies.
 
 - **Microphone** — to record what you dictate. Audio is transcribed on the device
   and is not retained after the transcript is produced.
-- **Speech recognition** — to turn that audio into text on the device.
+- **Speech recognition** — to turn that audio, or a recording you pick or share,
+  into text on the device.
 - **Notifications** — optional, and only used to remind you about things you
   scheduled yourself. Nothing is sent from anywhere; the reminders are scheduled
   locally by the app.
@@ -111,11 +129,16 @@ other keystrokes, and asks for no accessibility or input-monitoring permission.
 
 ## Getting things into BrainClone
 
-- **On iPhone**, BrainClone has a share extension, so you can send text or a link to
-  it from another app. What you share is written to a private container on your
-  phone that only BrainClone and its extension can read, and the app files it as an
-  entry the next time you open it. If it cannot be saved then, it stays in that
-  container until it can. It goes nowhere else.
+- **On iPhone**, BrainClone has a share extension, so you can send text, a link or a
+  voice memo to it from another app. What you share is written to a private
+  container on your phone that only BrainClone and its extension can read, and the
+  app files it as an entry the next time you open it. A recording is transcribed on
+  the phone, the transcript is saved, and the recording itself is then deleted from
+  that container. If something cannot be saved, it stays in that container until it
+  can. It goes nowhere else.
+- **On iPhone and Mac**, you can also pick a recording from Files to transcribe into
+  a note. The app reads the file to transcribe it and keeps only the text; the file
+  stays where it was.
 - **On Mac**, you can drop text or a text file onto the window, or use **Capture in
   BrainClone** from the Services menu of another app. Either way the app receives
   only what you chose to hand it, and files it as an entry.
