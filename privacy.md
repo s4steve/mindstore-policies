@@ -5,7 +5,7 @@ permalink: /privacy/
 
 # BrainClone — Privacy Policy
 
-_Last updated: 15 September 2026_
+_Last updated: 24 September 2026_
 
 ## The short version
 
@@ -17,7 +17,7 @@ your Mac stay in step with each other. No account, no sign-up, no analytics, no
 advertising identifiers, no crash reporting, no third-party SDKs.
 
 This is not a promise about how carefully we handle your data. There is no "we"
-that ever receives it. The app contains no networking code at all.
+that ever receives it. The app never makes a network connection of its own.
 
 ## What runs where
 
@@ -77,7 +77,7 @@ syncs to your other devices, and nothing is backed up.
 The Mac app is sandboxed by macOS, and is allowed to make network connections only
 so that Apple's own frameworks can do their jobs for it: CloudKit sync, the App
 Store purchase check, and that one-time speech model download. The app itself still
-contains no networking code.
+never makes a network connection of its own.
 
 ## The one asterisk: Siri
 
